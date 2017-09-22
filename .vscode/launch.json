@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:9966/debug/",
+            "url": "http://localhost:9966/debug/#12.65/35.6874/139.7612",
             "webRoot": "${workspaceRoot}"
         }
     ]
