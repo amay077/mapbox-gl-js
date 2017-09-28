@@ -251,6 +251,8 @@ class Painter {
     }
 
     render(style: Style, options: PainterOptions) {
+        var counter = 0;
+        console.log("painter.render start");
         this.style = style;
         this.options = options;
 
@@ -327,7 +329,8 @@ class Painter {
                 }
 
                 this.renderLayer(this, (sourceCache: any), layer, coords);
-
+                counter=counter+coords.length;
+                
                 renderTarget.unbind();
             }
         }
@@ -370,6 +373,7 @@ class Painter {
                 }
 
                 this.renderLayer(this, (sourceCache: any), layer, coords);
+                counter=counter+coords.length;
             }
         }
 
@@ -403,6 +407,7 @@ class Painter {
                 }
 
                 this.renderLayer(this, (sourceCache: any), layer, coords);
+                counter=counter+coords.length;
             }
         }
 
@@ -412,6 +417,9 @@ class Painter {
                 draw.debug(this, sourceCache, sourceCache.getVisibleCoordinates());
             }
         }
+
+        console.log("painter.render renderCount = " + counter);
+        console.log("painter.render end");
     }
 
     _setup3DRenderbuffer() {
